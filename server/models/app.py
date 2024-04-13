@@ -2,9 +2,12 @@ from datetime import date
 import requests
 import os
 import json
-
-# Load environment variables
+from flask import Flask, request, jsonify
 from dotenv import load_dotenv
+
+app = Flask(__name__)
+CORS(app)
+# Load environment variables
 load_dotenv()
 
 API_KEY = os.getenv('API_KEY')
@@ -14,6 +17,7 @@ API_SECRET = os.getenv('API_SECRET')
 BASE_URL_V1 = "https://test.api.amadeus.com/v1"
 BASE_URL_V2 = "https://test.api.amadeus.com/v2"
 
+app = Flask(__name__)
 def get_access_token():
     """ Retrieves an access token from Amadeus API """
     url = f"{BASE_URL_V1}/security/oauth2/token"
@@ -157,6 +161,44 @@ def flight_price_analysis(origin, destination, departure_date, token):
         print("Failed to analyze flight prices:", response.json())
         return {}
 
+@app.route('/api/check-claim', methods=['POST'])
+def check_claim():
+    # Ensure that JSON data is present
+    if not request.is_json:
+        return jsonify({"error": "Missing JSON in request"}), 400
+
+    data = request.get_json()
+    confirmation_number = data.get('confirmation_number')
+
+    if not confirmation_number:
+        return jsonify({"error": "Confirmation number is required"}), 400
+
+    token = get_access_token()
+    if not token:
+        return jsonify({"error": "Failed to authenticate with API provider"}), 503
+
+    fake_flight_data = load_fake_flight_data(confirmation_number)
+    if not fake_flight_data:
+        return jsonify({"error": "No flight data found"}), 404
+
+    result = main_check_claim(fake_flight_data, token)
+    return jsonify(result)
+
+def main_check_claim(fake_flight_data, token):
+    # Simplified claim logic for demonstration
+    status = fake_flight_data.get('status', 'Active')
+    reimbursement_status = "No Reimbursement Needed"
+
+    if status == 'Cancelled':
+        reimbursement_status = "Reimbursement Approved"
+
+    # More complex rules can be added here
+    return {
+        "flightDetails": fake_flight_data,
+        "reimbursementStatus": reimbursement_status
+    }
+
+
         
 def main():
     token = get_access_token()
@@ -220,5 +262,9 @@ def main():
     else:
         print("No reimbursement necessary based on the data analyzed.")
 
+
+
+
+
 if __name__ == "__main__":
-    main()
+    app.run(debug=True)
