@@ -1,85 +1,86 @@
 :root {
-  --primary-color: #5b63d6; /* Primary color */
-  --secondary-color: #f4f5f7; /* Secondary color */
-  --text-color: #333; /* Text color */
-  --background-color: #fff; /* Background color */
-  --font-family: "Open Sans", sans-serif; /* Typography */
+  --primary-color: #30475e; /* Dark desaturated blue */
+  --secondary-color: #f5f5f5; /* Off-white for card backgrounds */
+  --accent-color: #f2a365; /* Soft orange for interactive elements */
+  --text-color: #333333; /* Dark grey for text for better readability */
+  --background-color: #ececec; /* Light grey for overall background */
+  --border-radius: 10px; /* Rounded corners for a modern feel */
+  --hover-brighten-factor: 1.2; /* Factor to brighten the button color on hover */
 }
 
-/* Apply the font family globally */
 body {
-  font-family: var(--font-family);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: var(--text-color);
   background-color: var(--background-color);
   margin: 0;
   padding: 0;
 }
 
-/* Policy Catalog Container */
 .policy-catalog-container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh; /* Full height of the viewport */
-  padding: 20px;
+  padding: 40px 15px;
 }
 
-/* Policy Grid List */
+.catalog-title {
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
 .policy-list {
   display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(250px, 1fr)
-  ); /* Creates a responsive grid */
-  gap: 20px; /* Space between grid items */
-  list-style: none;
-  padding: 0;
-  width: 100%;
-  max-width: 1200px; /* Adjust based on your design preference */
-  margin: 0 auto; /* Center the grid */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin: 0 auto;
+  width: 90%;
+  max-width: 1200px;
 }
 
-/* Policy Grid Item */
 .policy-item {
   background-color: var(--secondary-color);
-  border: 1px solid var(--primary-color);
-  border-radius: 8px;
+  border: none;
+  border-radius: var(--border-radius);
   padding: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .policy-item:hover {
   transform: translateY(-5px);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
-/* Policy Name */
-.policy-item h2 {
+.policy-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.policy-title {
   color: var(--primary-color);
-  margin: 0 0 10px 0;
+  margin-bottom: 1rem;
 }
 
-/* Policy Description and Price */
-.policy-item p {
-  color: var(--text-color);
-  margin: 5px 0;
+.policy-price {
+  margin-bottom: 1.5rem;
+  font-size: 1.1rem;
+  font-weight: bold;
 }
 
-/* Buttons and Links */
-.policy-item a,
-.policy-item button {
-  text-decoration: none;
-  background-color: var(--primary-color);
-  color: var(--background-color);
-  padding: 10px 15px;
+.details-button {
+  padding: 10px 20px;
+  background-color: var(--accent-color);
+  color: #fff;
   border: none;
-  border-radius: 4px;
-  cursor: pointer;
+  border-radius: var(--border-radius);
   transition: background-color 0.3s ease;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
-.policy-item a:hover,
-.policy-item button:hover {
-  background-color: #4a52c7; /* Darker shade of the primary color */
+.details-button:hover {
+  background-color: var(--accent-color);
+  /* Adjust the brightness on hover without changing to white */
+  filter: brightness(var(--hover-brighten-factor));
 }

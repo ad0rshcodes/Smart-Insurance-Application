@@ -16,17 +16,19 @@ function PolicyCatalog() {
 
   return (
     <div className="policy-catalog-container">
-      <h1>Available Insurance Policies</h1>
-      <div className="policy-grid">
+      <h1 className="catalog-title">Available Insurance Policies</h1>
+      <div className="policy-list">
         {samplePolicies.map((policy) => (
           <div
             key={policy.id}
             className="policy-item"
             onClick={() => openModal(policy)}
           >
-            <h2>{policy.name}</h2>
-            <p>Price: ${policy.price}</p>
-            {/* Add more info and a button to view details */}
+            <div className="policy-content">
+              <h2 className="policy-title">{policy.name}</h2>
+              <p className="policy-price">Price: ${policy.price}</p>
+              <button className="details-button">View Details</button>
+            </div>
           </div>
         ))}
       </div>

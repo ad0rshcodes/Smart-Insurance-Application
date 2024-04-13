@@ -1,0 +1,54 @@
+{
+    "confirmation_number": "a4170c47-9f86-4582-9844-39e63a06d82e",
+    "flight_number": "LH444",
+    "airline_code": "LH",
+    "flight_date": "2023-06-01",
+    "flight_offers": [
+        {
+            "id": "f2090edc-4d05-44a9-9009-1b0c6b7284fa",
+            "source": "GDS",
+            "instantTicketingRequired": false,
+            "nonHomogeneous": false,
+            "oneWay": false,
+            "lastTicketingDate": "2023-05-31",
+            "numberOfBookableSeats": 9,
+            "itineraries": [
+                {
+                    "duration": "PT13H37M",
+                    "segments": [
+                        {
+                            "departure": {
+                                "iataCode": "HND",
+                                "terminal": "1",
+                                "at": "2023-06-01T10:00:00"
+                            },
+                            "arrival": {
+                                "iataCode": "LAX",
+                                "terminal": "1",
+                                "at": "2023-06-01T20:00:00"
+                            },
+                            "carrierCode": "LH",
+                            "number": "LH444",
+                            "aircraft": {
+                                "code": "773"
+                            },
+                            "operating": {
+                                "carrierCode": "LH"
+                            },
+                            "duration": "PT10H",
+                            "id": "750c3fd2-0e1b-4f55-982e-e3be8c925915",
+                            "numberOfStops": 0,
+                            "blacklistedInEU": false
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "price_details": {
+        "total": "450.00",
+        "currency": "USD"
+    },
+    "status": "Cancelled",
+    "cancellation_reason": "Weather conditions"
+}

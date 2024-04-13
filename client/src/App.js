@@ -19,12 +19,11 @@ export default function App() {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/catalog" element={<PolicyCatalog />} />
-        <Route path="/policy/:id" element={<PolicyDetails />} />
+        {/* <Route path="/policy/:id" element={<PolicyDetails />} /> */}
         <Route path="/confirm-purchase" element={<PurchaseConfirmation />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/link-wallet" element={<WalletLink />} />
         <Route path="/claims" element={<Claims />} />
-        {/* Add more routes as needed */}
       </Routes>
     </Router>
   );
