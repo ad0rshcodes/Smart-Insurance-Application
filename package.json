@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "@propelauth/react": "^2.0.19"
+  }
+}

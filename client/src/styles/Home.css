@@ -1,0 +1,60 @@
+:root {
+  --primary-color: #5b63d6; /* Replace with your primary color */
+  --secondary-color: #f4f5f7; /* Replace with your secondary color */
+  --text-color: #333; /* Replace with your text color */
+  --background-color: #fff; /* Replace with your background color */
+}
+
+/* Typography */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
+
+body {
+  font-family: "Open Sans", sans-serif;
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+/* Homepage styles */
+.home-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Aligns vertically */
+  align-items: center; /* Aligns horizontally */
+  height: 100vh; /* Full height of the viewport */
+  text-align: center;
+  /* padding: 20px; */
+}
+
+.home-container h1 {
+  color: var(--primary-color);
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+.home-container p {
+  font-size: 1rem;
+  margin-bottom: 30px;
+}
+
+.navigation-links a {
+  text-decoration: none;
+  color: var(--background-color);
+  background-color: var(--primary-color);
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin: 0 10px;
+  transition: background-color 0.3s ease;
+}
+
+.navigation-links a:hover {
+  background-color: #4a52c7; /* Darker shade of the primary color */
+  color: var(
+    --secondary-color
+  ); /* Ensure text color contrasts with the new background */
+}
+
+/* Utility classes */
+.btn-primary {
+  background-color: var(--primary-color);
+  /* Other button styles */
+}
