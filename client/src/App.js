@@ -1,7 +1,6 @@
 import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-
 import Home from "./pages/Home";
 import SignUp from "./pages/SignUp";
 import Dashboard from "./pages/Dashboard";
@@ -12,7 +11,7 @@ import Profile from "./pages/Profile";
 import WalletLink from "./pages/WalletLink";
 import Claims from "./pages/Claims";
 
-function App() {
+export default function App() {
   return (
     <Router>
       <Routes>
@@ -30,5 +29,3 @@ function App() {
     </Router>
   );
 }
-
-export default App;

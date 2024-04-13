@@ -1,25 +1,33 @@
-// import React from "react";
-// import { useAuth } from "@propelauth/react";
+// import {
+//   withAuthInfo,
+//   useRedirectFunctions,
+//   useLogoutFunction,
+// } from "@propelauth/react";
 
-// function SignUp() {
-//   const { authInfo, isAuthenticating } = useAuth();
+// const Signup = withAuthInfo((props) => {
+//   const logoutFunction = useLogoutFunction();
+//   const { redirectToLoginPage, redirectToSignupPage, redirectToAccountPage } =
+//     useRedirectFunctions();
+//   // Or if you want to make links instead
+//   // const { getLoginPageUrl, getSignupPageUrl, getAccountPageUrl } = useHostedPageUrls()
 
-//   if (isAuthenticating) {
-//     return <div>Loading...</div>;
+//   if (props.isLoggedIn) {
+//     return (
+//       <div>
+//         <p>You are logged in as {props.user.email}</p>
+//         <button onClick={() => redirectToAccountPage()}>Account</button>
+//         <button onClick={() => logoutFunction(true)}>Logout</button>
+//       </div>
+//     );
+//   } else {
+//     return (
+//       <div>
+//         <p>You are not logged in</p>
+//         <button onClick={() => redirectToLoginPage()}>Login</button>
+//         <button onClick={() => redirectToSignupPage()}>Signup</button>
+//       </div>
+//     );
 //   }
+// });
 
-//   if (authInfo) {
-//     // User is already authenticated
-//     return <div>You are already signed up and logged in!</div>;
-//   }
-
-//   // User is not authenticated, show the sign-up form
-//   return (
-//     <div>
-//       {/* Your sign-up form or a link to PropelAuth's hosted sign-up page */}
-//       <a href="https://your-auth-url.propelauth.com/signup">Sign Up</a>
-//     </div>
-//   );
-// }
-
-// export default SignUp;
+// export default Signup;

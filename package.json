@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "@propelauth/react": "^2.0.19"
+    "@propelauth/react": "^2.0.19",
+    "xrpl": "^3.0.0"
   }
 }

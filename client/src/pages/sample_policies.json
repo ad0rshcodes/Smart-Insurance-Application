@@ -1,0 +1,109 @@
+[
+  {
+    "id": 1,
+    "name": "Flight Delay Assurance",
+    "description": "Get compensated for flight delays over 3 hours.",
+    "coverage": ["Flight Delay"],
+    "delayThreshold": 180,
+    "price": "25.00",
+    "currency": "USD",
+    "payout": "200.00"
+  },
+  {
+    "id": 2,
+    "name": "Trip Cancellation Cover",
+    "description": "Full refund for cancellations due to medical emergencies.",
+    "coverage": ["Cancellation"],
+    "cancellationReasons": ["Medical Emergency"],
+    "price": "50.00",
+    "currency": "USD",
+    "payout": "1000.00"
+  },
+  {
+    "id": 3,
+    "name": "Luggage Protection Plan",
+    "description": "Protect against lost or delayed luggage.",
+    "coverage": ["Lost Luggage", "Delayed Luggage"],
+    "luggageDelayThreshold": 240,
+    "price": "30.00",
+    "currency": "USD",
+    "payout": "500.00"
+  },
+  {
+    "id": 4,
+    "name": "Missed Connection Insurance",
+    "description": "Compensation for missed connections due to airline fault.",
+    "coverage": ["Missed Connection"],
+    "connectionDelayThreshold": 60,
+    "price": "35.00",
+    "currency": "USD",
+    "payout": "300.00"
+  },
+  {
+    "id": 5,
+    "name": "Overbooking Compensation",
+    "description": "Receive payment if you're denied boarding due to overbooking.",
+    "coverage": ["Overbooking"],
+    "price": "20.00",
+    "currency": "USD",
+    "payout": "700.00"
+  },
+  {
+    "id": 6,
+    "name": "Emergency Medical Cover",
+    "description": "Emergency medical expenses covered during your travel.",
+    "coverage": ["Medical Expenses"],
+    "medicalCoverageLimit": "10000.00",
+    "price": "75.00",
+    "currency": "USD",
+    "payout": "10000.00"
+  },
+  {
+    "id": 7,
+    "name": "Travel Abandonment Insurance",
+    "description": "Reimbursement if you abandon your trip after a 12-hour delay.",
+    "coverage": ["Travel Abandonment"],
+    "abandonmentDelayThreshold": 720,
+    "price": "40.00",
+    "currency": "USD",
+    "payout": "800.00"
+  },
+  {
+    "id": 8,
+    "name": "Natural Disaster Evacuation Plan",
+    "description": "Covers evacuation costs due to natural disasters.",
+    "coverage": ["Evacuation"],
+    "evacuationReasons": ["Natural Disaster"],
+    "price": "60.00",
+    "currency": "USD",
+    "payout": "1500.00"
+  },
+  {
+    "id": 9,
+    "name": "Tarmac Delay Coverage",
+    "description": "Compensation for extended tarmac delays.",
+    "coverage": ["Tarmac Delay"],
+    "tarmacDelayThreshold": 120,
+    "price": "15.00",
+    "currency": "USD",
+    "payout": "250.00"
+  },
+  {
+    "id": 10,
+    "name": "Comprehensive Travel Insurance",
+    "description": "All-inclusive coverage for a worry-free travel experience.",
+    "coverage": [
+      "Flight Delay",
+      "Cancellation",
+      "Lost Luggage",
+      "Medical Expenses"
+    ],
+    "delayThreshold": 180,
+    "cancellationReasons": ["All"],
+    "luggageDelayThreshold": 240,
+    "medicalCoverageLimit": "5000.00",
+    "price": "100.00",
+    "currency": "USD",
+    "payout": "Varies"
+  }
+]

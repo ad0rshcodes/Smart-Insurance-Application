@@ -1,0 +1,85 @@
+:root {
+  --primary-color: #5b63d6; /* Primary color */
+  --secondary-color: #f4f5f7; /* Secondary color */
+  --text-color: #333; /* Text color */
+  --background-color: #fff; /* Background color */
+  --font-family: "Open Sans", sans-serif; /* Typography */
+}
+
+/* Apply the font family globally */
+body {
+  font-family: var(--font-family);
+  color: var(--text-color);
+  background-color: var(--background-color);
+  margin: 0;
+  padding: 0;
+}
+
+/* Policy Catalog Container */
+.policy-catalog-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Full height of the viewport */
+  padding: 20px;
+}
+
+/* Policy Grid List */
+.policy-list {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(250px, 1fr)
+  ); /* Creates a responsive grid */
+  gap: 20px; /* Space between grid items */
+  list-style: none;
+  padding: 0;
+  width: 100%;
+  max-width: 1200px; /* Adjust based on your design preference */
+  margin: 0 auto; /* Center the grid */
+}
+
+/* Policy Grid Item */
+.policy-item {
+  background-color: var(--secondary-color);
+  border: 1px solid var(--primary-color);
+  border-radius: 8px;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.policy-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Policy Name */
+.policy-item h2 {
+  color: var(--primary-color);
+  margin: 0 0 10px 0;
+}
+
+/* Policy Description and Price */
+.policy-item p {
+  color: var(--text-color);
+  margin: 5px 0;
+}
+
+/* Buttons and Links */
+.policy-item a,
+.policy-item button {
+  text-decoration: none;
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  padding: 10px 15px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.policy-item a:hover,
+.policy-item button:hover {
+  background-color: #4a52c7; /* Darker shade of the primary color */
+}
