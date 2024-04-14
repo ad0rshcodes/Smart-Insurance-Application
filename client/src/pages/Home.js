@@ -6,7 +6,6 @@ function Home() {
   return (
     <div className="home-container">
       <div className="content">
-        {/* <img src={insuranceIcon} alt="Insurance Icon" className="icon" /> */}
         <div className="text-container">
           <h1 className="main-heading">Welcome to RippleCare</h1>
           <p className="sub-text">

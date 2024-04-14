@@ -1,18 +1,13 @@
 /* Root color definitions and basic setup */
-:root {
-  --primary-color: #5b63d6;
-  --secondary-color: #f4f5f7;
-  --text-color: #333;
-  --background-color: #fff;
-}
+@import "./colors.css";
 
 html,
 body {
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
-  background-color: var(--secondary-color);
-  color: var(--text-color);
+  background-color: var(--bg);
+  color: var(--text);
   height: 100%;
 }
 
@@ -25,7 +20,7 @@ body {
 }
 
 header {
-  background-color: var(--primary-color);
+  background-color: var(--primary-);
   color: white;
   width: 100%;
   padding: 20px 0;
@@ -38,7 +33,7 @@ header {
   max-width: 600px;
   padding: 20px;
   border-radius: 8px;
-  background-color: var(--background-color);
+  background-color: var(--background);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -55,14 +50,14 @@ input[type="text"] {
   padding: 10px;
   margin-top: 8px;
   margin-bottom: 20px;
-  border: 2px solid var(--primary-color);
+  border: 2px solid var(--primary);
   border-radius: 4px;
   outline: none;
 }
 
 button {
   padding: 10px 20px;
-  background-color: var(--primary-color);
+  background-color: var(--primary);
   border: none;
   border-radius: 4px;
   color: white;
@@ -72,5 +67,5 @@ button {
 }
 
 button:hover {
-  background-color: darken(var(--primary-color), 10%);
+  background-color: darken(var(--primary), 10%);
 }

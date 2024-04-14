@@ -1,0 +1,11 @@
+:root {
+  --primary: rgb(72, 106, 217); /* Define primary color */
+  --secondary: #1a1a1a; /* Define secondary color */
+  --border: #e7e7e7; /* Define border color */
+  --hover: #f2f2f2; /* Define border color */
+  --accent: #3cdc6a; /* Define accent color */
+  --text: #333333; /* Define text color */
+  --bg: #ececec; /* Define background color */
+  --border-radius: 10px; /* Define border radius for elements */
+  --hover-brighten-factor: 1.2; /* Define brightness factor for hover state */
+}

@@ -1,4 +1,5 @@
 /* SignUp.css */
+@import "./colors.css";
 
 .signup-container {
   display: flex;
@@ -15,7 +16,7 @@
   font-family: "Helvetica Neue", sans-serif;
   font-weight: bold;
   font-size: 2rem;
-  color: #000;
+  color: var(--text);
   margin-bottom: 20px;
 }
 
@@ -44,8 +45,8 @@
 .signup-btn {
   width: 100%;
   padding: 10px;
-  background-color: #5b63d6; /* Yellow color */
-  color: #000;
+  background-color: var(--primary); /* Yellow color */
+  color: var(--bg);
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -54,17 +55,16 @@
 }
 
 .signup-btn:hover {
-  background-color: #000; /* Black color */
-  color: #5b63d6; /* Yellow color */
+  background-color: #4a74c7;
+  color: var(--bg); /* Yellow color */
 }
 
 .login-link {
   font-family: "Helvetica Neue", sans-serif;
-  color: #000;
+  color: var(--text);
   font-size: 0.9rem;
 }
 
 .login-link a {
-  color: #5b63d6; /* Yellow color */
+  color: var(--primary); /* Yellow color */
 }
-

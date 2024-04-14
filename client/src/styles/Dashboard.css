@@ -1,0 +1,43 @@
+@import "./colors.css";
+
+.dashboard {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+.insurance-box {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 5px;
+  width: 300px;
+}
+
+.insurance-info p {
+  margin: 10px 0;
+}
+
+.claim-button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.claim-button:hover {
+  background-color: var(--secondary);
+}
+
+.insurance-info {
+  width: 100%; /* Ensure it takes full width of its container */
+}
+
+.airline-logo {
+  width: 100%; /* Make the logo stretch to fill the container */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Remove extra space below the image */
+}

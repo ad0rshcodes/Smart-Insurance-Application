@@ -1,4 +1,5 @@
 import React from "react";
+import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import SignUp from "./pages/SignUp";
@@ -7,7 +8,6 @@ import PolicyCatalog from "./pages/PolicyCatalog";
 import PurchaseConfirmation from "./pages/PurchaseConfirmation";
 import Profile from "./pages/Profile";
 import WalletLink from "./pages/WalletLink";
-// import FlightTracker from "./FlightTracker"; // Importing FlightTracker component
 
 export default function App() {
   return (
@@ -20,7 +20,6 @@ export default function App() {
         <Route path="/confirm-purchase" element={<PurchaseConfirmation />} />
         <Route path="/profile" element={<Profile />} />
         <Route path="/link-wallet" element={<WalletLink />} />
-        {/* <Route path="/track-flight" element={<FlightTracker />} />{" "} */}
       </Routes>
     </Router>
   );

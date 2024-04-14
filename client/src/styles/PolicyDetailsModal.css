@@ -1,3 +1,5 @@
+@import "./colors.css";
+
 .modal-backdrop {
   position: fixed;
   top: 0;
@@ -12,7 +14,7 @@
 }
 
 .modal-content {
-  background-color: var(--secondary-color);
+  background-color: var(--bg);
   padding: 30px;
   border-radius: var(--border-radius);
   width: 100%;
@@ -37,15 +39,24 @@
   border: none;
   font-size: 1.5rem;
   cursor: pointer;
+  color: black;
 }
 
 .modal-body {
   margin-bottom: 20px;
 }
 
+.flight-confirmation-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: var(--border-radius);
+}
+
 .purchase-button {
   padding: 10px 20px;
-  background-color: var(--primary-color);
+  background-color: var(--primary);
   color: white;
   border: none;
   border-radius: var(--border-radius);
@@ -54,5 +65,54 @@
 }
 
 .purchase-button:hover {
-  background-color: darken(var(--primary-color), 10%);
+  background-color: darken(var(--primary), 10%);
+}
+
+/* Styles for transaction states */
+.funds-transferring {
+  background-color: #d4a017; /* Dark shade of yellow */
+  color: white;
+  pointer-events: none; /* Prevent clicking while in process */
+}
+
+.transaction-successful {
+  background-color: #4caf50; /* Green color for success */
+  color: white;
+  pointer-events: none; /* Prevent clicking after success */
+}
+
+.transaction-details {
+  margin-top: 15px;
+  padding: 10px;
+  background-color: #f5f5f5; /* Light grey background */
+  border: 1px solid #ccc; /* Grey border */
+  border-radius: var(--border-radius);
+  font-family: monospace; /* Font for code-like appearance */
+  white-space: pre-wrap; /* Allows text to wrap within the container */
+  word-wrap: break-word; /* Breaks the text to prevent overflow */
+  overflow-wrap: break-word; /* Ensures long words break and wrap to the next line */
+  overflow-x: auto; /* Adds a horizontal scrollbar if needed */
+}
+
+.transaction-details p code {
+  background-color: #e8e8e8; /* Lighter grey for code blocks */
+  padding: 2px 4px;
+  border-radius: 4px;
+  display: block; /* Makes code elements behave like block-level elements */
+  overflow-x: auto; /* Adds a horizontal scrollbar if needed */
+}
+
+.dashboard-button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dashboard-button:hover {
+  background-color: darken(var(--primary), 10%);
 }

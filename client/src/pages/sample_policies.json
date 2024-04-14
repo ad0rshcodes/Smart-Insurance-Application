@@ -1,20 +1,6 @@
 [
   {
     "id": 1,
-    "name": "Comprehensive Flight Assurance",
-    "description": "Offering robust protection against both delays and cancellations, this plan ensures that you receive timely compensation for any flight delay exceeding 3 hours and full reimbursement for cancellations. Designed to provide peace of mind, this policy covers additional expenses and minimizes disruptions to your travel plans, allowing you to focus on what truly matters - your journey.",
-    "coverage": ["Flight Delay", "Flight Cancellation"],
-    "delayThreshold": 180,
-    "cancellationReasons": ["Weather", "Technical Issues", "Airline Fault"],
-    "price": "45.00",
-    "currency": "USD",
-    "payout": {
-      "Delay": "200.00",
-      "Cancellation": "Full Ticket Refund"
-    }
-  },
-  {
-    "id": 2,
     "name": "Trip Cancellation Cover",
     "description": "Gain peace of mind with a full refund for trip cancellations due to medical emergencies, prioritizing your health and financial well-being in unforeseen circumstances.",
     "coverage": ["Cancellation"],
@@ -23,18 +9,9 @@
     "currency": "USD",
     "payout": "1000.00"
   },
+
   {
-    "id": 3,
-    "name": "Luggage Protection Plan",
-    "description": "Safeguard your travel experience from the distress of lost or delayed luggage with prompt compensation, ensuring you can replace essentials and enjoy your trip uninterrupted.",
-    "coverage": ["Lost Luggage", "Delayed Luggage"],
-    "luggageDelayThreshold": 240,
-    "price": "30.00",
-    "currency": "USD",
-    "payout": "500.00"
-  },
-  {
-    "id": 4,
+    "id": 2,
     "name": "Missed Connection Insurance",
     "description": "Receive compensation for missed connections due to airline issues, helping you manage the unexpected expenses and rearrangements necessary to continue your journey.",
     "coverage": ["Missed Connection"],
@@ -44,7 +21,7 @@
     "payout": "300.00"
   },
   {
-    "id": 5,
+    "id": 3,
     "name": "Overbooking Compensation",
     "description": "Secure a guaranteed compensation if you're denied boarding because of overbooking, affirming your rights and providing financial relief in such situations.",
     "coverage": ["Overbooking"],
@@ -53,7 +30,7 @@
     "payout": "700.00"
   },
   {
-    "id": 6,
+    "id": 4,
     "name": "Emergency Medical Cover",
     "description": "Offers comprehensive coverage for emergency medical expenses while traveling, ensuring that unexpected health issues do not impede your safety or financial stability.",
     "coverage": ["Medical Expenses"],
@@ -62,38 +39,9 @@
     "currency": "USD",
     "payout": "10000.00"
   },
+
   {
-    "id": 7,
-    "name": "Travel Abandonment Insurance",
-    "description": "Provides reimbursement if you need to abandon your trip following a delay of over 12 hours, safeguarding against the loss of investment in your travels and ensuring peace of mind in uncertain situations.",
-    "coverage": ["Travel Abandonment"],
-    "abandonmentDelayThreshold": 720,
-    "price": "40.00",
-    "currency": "USD",
-    "payout": "800.00"
-  },
-  {
-    "id": 8,
-    "name": "Natural Disaster Evacuation Plan",
-    "description": "Secures financial support for evacuation expenses in the event of natural disasters, ensuring you can safely relocate without the burden of additional costs during critical times.",
-    "coverage": ["Evacuation"],
-    "evacuationReasons": ["Natural Disaster"],
-    "price": "60.00",
-    "currency": "USD",
-    "payout": "1500.00"
-  },
-  {
-    "id": 9,
-    "name": "Tarmac Delay Coverage",
-    "description": "Provides compensation for passengers experiencing extended delays on the tarmac, offering financial relief and acknowledgment for the inconvenience caused by such delays.",
-    "coverage": ["Tarmac Delay"],
-    "tarmacDelayThreshold": 120,
-    "price": "15.00",
-    "currency": "USD",
-    "payout": "250.00"
-  },
-  {
-    "id": 10,
+    "id": 5,
     "name": "Comprehensive Travel Insurance",
     "description": "This all-encompassing insurance plan covers all aspects of your travel, from delays and cancellations to luggage issues and medical expenses, ensuring a truly worry-free journey from start to finish.",
     "coverage": [

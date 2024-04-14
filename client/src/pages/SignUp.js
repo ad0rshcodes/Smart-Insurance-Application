@@ -10,9 +10,9 @@ function SignUp() {
         <form className="signup-form">
           <div className="form-group">
             <input
-              type="text"
+              type=""
               className="form-input"
-              placeholder="Full Name (First Last"
+              placeholder="Full Name"
               required
             />
           </div>
@@ -55,7 +55,7 @@ function SignUp() {
           </Link>
         </form>
         <p className="login-link">
-          Already have an account? <Link to="/login">Log in</Link>
+          Already have an account? <Link to="/signup">Log in</Link>
         </p>
       </div>
     </div>

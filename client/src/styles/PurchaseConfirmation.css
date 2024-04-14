@@ -1,28 +1,29 @@
+@import "./colors.css";
+
 .purchase-confirmation-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin-top: 50px;
-  }
-  
-  .confirmation-icon {
-    font-size: 48px;
-    color: #5b63d6;
-  }
-  
-  .confirmation-message {
-    text-align: center;
-    margin-top: 20px;
-  }
-  
-  .confirmation-message h1 {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-  
-  .confirmation-message p {
-    font-size: 16px;
-    margin-bottom: 5px;
-  }
-  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin-top: 50px;
+}
+
+.confirmation-icon {
+  font-size: 48px;
+  color: var(--primary);
+}
+
+.confirmation-message {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.confirmation-message h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.confirmation-message p {
+  font-size: 16px;
+  margin-bottom: 5px;
+}
