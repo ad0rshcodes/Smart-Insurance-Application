@@ -36,7 +36,3 @@ async function transferXRP(fromAddress, secret, toAddress, amount) {
 
 module.exports = { transferXRP };
 
-// Example usage:
-// transferXRP('rFromAddress', 'sFromAddressSecret', 'rToAddress', '10')
-//     .then(() => console.log('Transfer complete.'))
-//     .catch(console.error);

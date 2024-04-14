@@ -35,20 +35,7 @@ const WalletLink = () => {
   };
 
   const handleLinkWallet = async (walletAddress) => {
-    // checks if wallet address is valid (syntax)
-    /*const isValidAddress = verifyWalletAddress(walletAddress);
-    if (!isValidAddress) {
-      alert("Invalid XRPL wallet address.");
-      return;
-    }*/
-    // check if wallet exists
-    /*const walletExistsOnXRPL = await checkWalletOnXRPL(walletAddress);
-    if (!walletExistsOnXRPL) {
-      alert("Wallet address not found on the XRPL.");
-      return;
-    }*/
-    // Link the wallet to the user's account in your system
-    // Save the wallet address to your database, etc.
+
   };
 
   const handleSubmit = (event) => {
