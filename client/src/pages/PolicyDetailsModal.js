@@ -126,6 +126,15 @@ function PolicyDetailsModal({ policy, onClose }) {
               <p>
                 Ledger Index: <code>{transactionDetails.ledger_index}</code>
               </p>
+              <p>
+                View this transaction in ledger{" "}
+                <a
+                  href={`https://testnet.xrpl.org/transactions/${transactionDetails.hash}`}
+                  target="_blank"
+                >
+                  here.
+                </a>
+              </p>
               <button className="dashboard-button" onClick={goToDashboard}>
                 Dashboard
               </button>

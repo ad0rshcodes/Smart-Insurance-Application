@@ -7,12 +7,16 @@ import {
   RecipientSecret,
 } from "./constants";
 import unitedLogo from "../assets/united-airlines.png";
+import { useNavigate } from "react-router-dom"; // Import useNavigate hook
 
 const xrpl = require("xrpl");
 
 const Dashboard = () => {
   const [transactionResult, setTransactionResult] = useState("");
-
+  const navigate = useNavigate(); // Add this line to use the navigate function
+  const handleAddInsuranceClick = () => {
+    navigate("/catalog");
+  };
   const sendXRPTransaction = async () => {
     const client = new xrpl.Client("wss://s.altnet.rippletest.net:51233");
     try {
@@ -74,6 +78,14 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard">
+      <div className="navbar">
+        <div className="dashboard-title">Dashboard</div>
+        <div className="company-name">Your Company Name</div>
+        <div className="logout">
+          <a href="/logout">Logout</a>
+        </div>
+      </div>
+
       <div className="insurance-box">
         <div className="insurance-info">
           <img
@@ -106,6 +118,15 @@ const Dashboard = () => {
           <button onClick={handleClaim} className="claim-button">
             Claim
           </button>
+        </div>
+      </div>
+      <div
+        className="additional-insurance-box"
+        onClick={handleAddInsuranceClick}
+      >
+        <div className="additional-insurance-content">
+          <span className="plus-symbol">+</span>
+          <p>Click Here to buy other travel insurances or add flights.</p>
         </div>
       </div>
     </div>

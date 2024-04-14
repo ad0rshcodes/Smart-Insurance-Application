@@ -1,22 +1,70 @@
 @import "./colors.css";
 
-.dashboard {
+/* Main dashboard container */
+.dashboard-container {
   display: flex;
-  justify-content: center;
-  margin-top: 50px;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 70px; /* Adjust this to match your navbar's height */
 }
 
+/* Navbar styles */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--primary);
+  color: white;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: fixed; /* Fixed at the top */
+  width: 100%; /* Full width */
+  top: 0; /* Stick to the top */
+  left: 0; /* Align left */
+  z-index: 100; /* Ensure it's above other content */
+}
+
+/* Navbar title, company name, and logout styles */
+.navbar .dashboard-title,
+.navbar .company-name,
+.navbar .logout {
+  flex-shrink: 1;
+  white-space: nowrap;
+  margin: 0 10px;
+}
+
+/* Logout link styles */
+.navbar .logout a {
+  color: white;
+  text-decoration: none;
+  padding: 5px 10px;
+  border: 1px solid white;
+  border-radius: 5px;
+  margin: 0;
+  overflow: hidden;
+}
+
+/* Hover effect for logout link */
+.navbar a:hover {
+  background-color: var(--secondary);
+}
+
+/* Styles for the insurance box */
 .insurance-box {
   border: 1px solid #ddd;
   padding: 20px;
   border-radius: 5px;
   width: 300px;
+  margin-right: auto; /* Keeps it on the left */
 }
 
+/* Paragraph styles within the insurance info */
 .insurance-info p {
   margin: 10px 0;
 }
 
+/* Claim button styles */
 .claim-button {
   display: block;
   width: 100%;
@@ -28,16 +76,91 @@
   cursor: pointer;
 }
 
+/* Hover effect for claim button */
 .claim-button:hover {
   background-color: var(--secondary);
 }
 
+/* Insurance info container styles */
 .insurance-info {
-  width: 100%; /* Ensure it takes full width of its container */
+  width: 100%;
 }
 
+/* Logo image styles */
 .airline-logo {
-  width: 100%; /* Make the logo stretch to fill the container */
-  height: auto; /* Maintain aspect ratio */
-  display: block; /* Remove extra space below the image */
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .navbar .dashboard-title,
+  .navbar .company-name,
+  .navbar .logout {
+    font-size: 0.9rem;
+    margin: 0 5px;
+  }
+
+  .insurance-box {
+    width: 100%; /* Make insurance box full width on smaller screens */
+    padding: 20px 10px;
+  }
+
+  /* Add any other necessary style adjustments for smaller screens */
+}
+
+/* Add these styles to your existing Dashboard.css file */
+
+/* Styles for the additional insurance box */
+.additional-insurance-box {
+  border: 2px dotted #ddd;
+  padding: 20px;
+  border-radius: 5px;
+  width: 300px;
+  margin-left: 20px; /* Adjust as necessary */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Styles for the content within the additional insurance box */
+.additional-insurance-content {
+  text-align: center;
+}
+
+/* Plus symbol styles */
+.plus-symbol {
+  font-size: 3rem; /* Adjust size as necessary */
+  color: grey;
+  margin-bottom: 10px;
+}
+
+/* Hover effect for the plus symbol and text */
+.additional-insurance-box:hover .plus-symbol,
+.additional-insurance-box:hover p {
+  color: blue;
+}
+
+/* Responsive adjustments for placing the additional box next to the existing one */
+@media (min-width: 768px) {
+  .dashboard {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  /* Adjustments for the existing insurance box */
+  .insurance-box {
+    margin-left: 20px; /* Ensure some spacing between the boxes */
+  }
+}
+
+/* Add any other necessary responsive adjustments for the additional box */
+@media (max-width: 768px) {
+  .additional-insurance-box {
+    width: calc(100% - 40px); /* Adjust width to fit the screen minus padding */
+    margin-top: 20px; /* Add some space above the additional box */
+  }
 }

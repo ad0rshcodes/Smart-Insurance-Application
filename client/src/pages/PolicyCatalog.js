@@ -27,6 +27,7 @@ function PolicyCatalog() {
             <div className="policy-content">
               <h2 className="policy-title">{policy.name}</h2>
               <p className="policy-price">Price: ${policy.price}</p>
+              <p className="policy-price">Claim Amount: ${policy.payout}</p>
               <button className="details-button">View Details</button>
             </div>
           </div>
