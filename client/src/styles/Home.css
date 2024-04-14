@@ -1,64 +1,87 @@
-:root {
-  --primary-color: #5b63d6; /* Replace with your primary color */
-  --secondary-color: #f4f5f7; /* Replace with your secondary color */
-  --text-color: #333; /* Replace with your text color */
-  --background-color: #fff; /* Replace with your background color */
-}
+/* Reset styles (optional) */
+/* import "normalize.css"; */
 
-/* Typography */
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
+:root {
+  --primary: #5b63d6;
+  --secondary: #f4f5f7;
+  --text: #333;
+  --bg: #fff;
+}
 
 body {
   font-family: "Open Sans", sans-serif;
-  color: var(--text-color);
-  background-color: var(--background-color);
+  color: var(--text);
+  background-color: var(--bg);
+  margin: 0; /* Remove default margin */
 }
 
-/* Homepage styles */
 .home-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  text-align: center;
+  width: 80%; /* Example max-width for larger screens */
+  margin: 0 auto; /* Center horizontally */
 }
 
 .home-container h1 {
-  color: var(--primary-color);
+  color: var(--primary);
   font-size: 2.5rem;
   margin-bottom: 20px;
 }
 
 .home-container p {
   font-size: 1rem;
+  line-height: 1.5; /* Improve readability */
   margin-bottom: 30px;
+  max-width: 600px; /* Example max-width for content */
+}
+
+.navigation-links {
+  display: flex; /* Assuming horizontal links */
+  justify-content: space-between; /* Distribute links evenly */
 }
 
 .navigation-links a {
   text-decoration: none;
-  color: var(--background-color);
-  background-color: var(--primary-color);
   padding: 10px 20px;
   border-radius: 5px;
-  margin: 0 10px;
-  transition: background-color 0.3s ease, color 0.3s ease; /* Added color transition */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  color: var(--bg);
+  background-color: var(--primary);
+  font-weight: bold; /* Add emphasis */
 }
 
 .navigation-links a:hover {
-  background-color: #4a52c7; /* Darker shade of the primary color */
-  color: var(--secondary-color);
+  background-color: #4a52c7;
+  color: var(--secondary);
 }
 
-/* Utility classes */
 .btn-primary {
-  background-color: var(--primary-color);
-  color: var(--background-color);
   padding: 10px 20px;
   border-radius: 5px;
-  transition: background-color 0.3s ease, color 0.3s ease; /* Added color transition */
+  transition: background-color 0.3s ease, color 0.3s ease;
+  color: var(--bg);
+  background-color: var(--primary);
+  font-weight: bold;
+}
+.navigation-links {
+  display: flex; /* Enable Flexbox */
+  justify-content: left; /* Center elements horizontally */
 }
 
 .btn-primary:hover {
-  background-color: #ffa500; /* Darker shade of the primary color (orange) */
+  background-color: #ffa500;
+}
+
+/* Media queries (optional) */
+@media (max-width: 768px) {
+  /* Adjust styles for smaller screens */
+  .home-container {
+    width: 100%; /* Full width on small screens */
+  }
+  .navigation-links {
+    flex-direction: column; /* Stack links vertically */
+  }
 }
