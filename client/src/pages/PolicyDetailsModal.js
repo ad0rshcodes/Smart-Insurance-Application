@@ -18,7 +18,7 @@ function PolicyDetailsModal({ policy, onClose }) {
         </div>
         <div className="modal-footer">
           <Link to="/confirm-purchase" className="purchase-button">
-            Purchased
+            Purchase
           </Link>
         </div>
       </div>

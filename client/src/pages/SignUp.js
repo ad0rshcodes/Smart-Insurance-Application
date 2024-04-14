@@ -48,7 +48,7 @@ function SignUp() {
               required
             />
           </div>
-          <Link to="/flighttrack">
+          <Link to="/catalog">
             <button className="signup-btn" type="submit">
               Sign Up
             </button>
