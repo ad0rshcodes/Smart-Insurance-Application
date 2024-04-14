@@ -6,7 +6,6 @@ import SignUp from "./pages/SignUp";
 import Dashboard from "./pages/Dashboard";
 import PolicyCatalog from "./pages/PolicyCatalog";
 import PurchaseConfirmation from "./pages/PurchaseConfirmation";
-import Profile from "./pages/Profile";
 import WalletLink from "./pages/WalletLink";
 
 export default function App() {
@@ -18,7 +17,6 @@ export default function App() {
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/catalog" element={<PolicyCatalog />} />
         <Route path="/confirm-purchase" element={<PurchaseConfirmation />} />
-        <Route path="/profile" element={<Profile />} />
         <Route path="/link-wallet" element={<WalletLink />} />
       </Routes>
     </Router>

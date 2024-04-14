@@ -8,26 +8,36 @@ import {
 } from "./constants";
 import unitedLogo from "../assets/united-airlines.png";
 import { useNavigate } from "react-router-dom"; // Import useNavigate hook
+import "../styles/PolicyDetailsModal.css";
 
 const xrpl = require("xrpl");
 
 const Dashboard = () => {
   const [transactionResult, setTransactionResult] = useState("");
+  const [isTransactionInProcess, setIsTransactionInProcess] = useState(false);
+  const [isTransactionSuccessful, setIsTransactionSuccessful] = useState(false);
+  const [transactionDetails, setTransactionDetails] = useState({
+    TxnSignature: "",
+    hash: "",
+    ledger_index: "",
+  });
+
   const navigate = useNavigate(); // Add this line to use the navigate function
   const handleAddInsuranceClick = () => {
     navigate("/catalog");
   };
+
   const sendXRPTransaction = async () => {
+    setIsTransactionInProcess(true);
+    setIsTransactionSuccessful(false);
+    setTransactionDetails({ TxnSignature: "", hash: "", ledger_index: "" }); // Resetting transaction details
+
     const client = new xrpl.Client("wss://s.altnet.rippletest.net:51233");
     try {
       await client.connect();
-      console.log("Connected to XRPL Testnet");
-
-      const existingWallet = xrpl.Wallet.fromSeed(
-        InsuranceSecret // Recipient's secret
-      );
-      const destination = RecipientAddress; // Insurance's address
-      const amount = 250;
+      const existingWallet = xrpl.Wallet.fromSeed(InsuranceSecret);
+      const destination = RecipientAddress;
+      const amount = 1;
 
       const payment = {
         TransactionType: "Payment",
@@ -40,12 +50,28 @@ const Dashboard = () => {
       const signed = existingWallet.sign(prepared);
       const result = await client.submitAndWait(signed.tx_blob);
 
-      console.log("Payment result:", result);
-      setTransactionResult(JSON.stringify(result, null, 2)); // Update state with formatted result
+      console.log(result);
+
+      const txnDetails = result.result.tx_json || result.result;
+
+      console.log(txnDetails.TxnSignature);
+      console.log(txnDetails.hash);
+      console.log(txnDetails.ledger_index);
+
+      setTransactionResult(JSON.stringify(result, null, 2));
+      setIsTransactionSuccessful(true);
+      setTransactionDetails({
+        // Now updating the state with actual txn details
+        TxnSignature: txnDetails.TxnSignature,
+        hash: txnDetails.hash,
+        ledger_index: txnDetails.ledger_index,
+      });
     } catch (error) {
       console.error(error);
-      setTransactionResult("Error: " + error.message); // Update state with error message
+      setTransactionResult("Error: " + error.message);
+      alert(`Transaction failed: ${error.message}`);
     } finally {
+      setIsTransactionInProcess(false);
       await client.disconnect();
     }
   };
@@ -78,15 +104,17 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard">
+      {/* Navbar */}
       <div className="navbar">
         <div className="dashboard-title">Dashboard</div>
-        <div className="company-name">Your Company Name</div>
+        <div className="Peoples Protect">Your Company Name</div>
         <div className="logout">
-          <a href="/logout">Logout</a>
+          <a href="/signup">Logout</a>
         </div>
       </div>
-
+      {/* First Insurance Box */}
       <div className="insurance-box">
+        {/* Insurance Block data*/}
         <div className="insurance-info">
           <img
             src={unitedLogo}
@@ -96,6 +124,9 @@ const Dashboard = () => {
           <p>
             <strong>Confirmation Number:</strong>{" "}
             {insuranceData.flightConfirmationNumber}
+          </p>
+          <p>
+            <strong>Passenger Name:</strong> Adarsh Sharma
           </p>
           <p>
             <strong>Airlines:</strong> {insuranceData.airline}
@@ -114,12 +145,51 @@ const Dashboard = () => {
             <strong>Status:</strong> {insuranceData.status}
           </p>
         </div>
-        <div className="insurance-claim">
-          <button onClick={handleClaim} className="claim-button">
-            Claim
+        {/* Insurance Claim Button */}
+        <div className="modal-footer insurance-claim">
+          <button
+            onClick={handleClaim}
+            className={`purchase-button ${
+              isTransactionInProcess
+                ? "funds-transferring"
+                : isTransactionSuccessful
+                ? "transaction-successful"
+                : ""
+            }`}
+            disabled={isTransactionInProcess || isTransactionSuccessful}
+          >
+            {isTransactionInProcess
+              ? "Verifying Claim..."
+              : isTransactionSuccessful
+              ? "Transaction Successful!"
+              : "Claim"}
           </button>
+          {isTransactionSuccessful && (
+            <div className="transaction-details">
+              <p>
+                Transaction Signature:{" "}
+                <code>{transactionDetails.TxnSignature}</code>
+              </p>
+              <p>
+                Hash: <code>{transactionDetails.hash}</code>
+              </p>
+              <p>
+                Ledger Index: <code>{transactionDetails.ledger_index}</code>
+              </p>
+              <p>
+                View this transaction in ledger{" "}
+                <a
+                  href={`https://testnet.xrpl.org/transactions/${transactionDetails.hash}`}
+                  target="_blank"
+                >
+                  here.
+                </a>
+              </p>
+            </div>
+          )}
         </div>
       </div>
+      {/* Add more insuarnaces and flights button */}
       <div
         className="additional-insurance-box"
         onClick={handleAddInsuranceClick}
