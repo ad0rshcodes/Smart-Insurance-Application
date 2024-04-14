@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../styles/PolicyDetailsModal.css";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import {
   InsuranceAddress,
@@ -13,6 +14,7 @@ const xrpl = require("xrpl");
 
 function PolicyDetailsModal({ policy, onClose }) {
   const [transactionResult, setTransactionResult] = useState("");
+  const navigate = useNavigate();
 
   const sendXRPTransaction = async () => {
     const client = new xrpl.Client("wss://s.altnet.rippletest.net:51233");
@@ -20,9 +22,7 @@ function PolicyDetailsModal({ policy, onClose }) {
       await client.connect();
       console.log("Connected to XRPL Testnet");
 
-      const existingWallet = xrpl.Wallet.fromSeed(
-        RecipientSecret // Recipient's secret
-      );
+      const existingWallet = xrpl.Wallet.fromSeed(RecipientSecret); // Recipient's secret
       const destination = InsuranceAddress; // Insurance's address
       const amount = 100;
 
@@ -36,12 +36,16 @@ function PolicyDetailsModal({ policy, onClose }) {
       const prepared = await client.autofill(payment);
       const signed = existingWallet.sign(prepared);
       const result = await client.submitAndWait(signed.tx_blob);
-
       console.log("Payment result:", result);
       setTransactionResult(JSON.stringify(result, null, 2)); // Update state with formatted result
+
+      // Show success message and redirect on user confirmation
+      alert("Transaction successful!");
+      navigate("/"); // Redirect to another page
     } catch (error) {
       console.error(error);
       setTransactionResult("Error: " + error.message); // Update state with error message
+      alert(`Transaction failed: ${error.message}`); // Show error in an alert
     } finally {
       await client.disconnect();
     }
