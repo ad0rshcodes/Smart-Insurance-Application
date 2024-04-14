@@ -44,7 +44,7 @@
 .signup-btn {
   width: 100%;
   padding: 10px;
-  background-color: #fdd835; /* Yellow color */
+  background-color: #5b63d6; /* Yellow color */
   color: #000;
   border: none;
   border-radius: 5px;
@@ -55,7 +55,7 @@
 
 .signup-btn:hover {
   background-color: #000; /* Black color */
-  color: #fdd835; /* Yellow color */
+  color: #5b63d6; /* Yellow color */
 }
 
 .login-link {
@@ -65,5 +65,6 @@
 }
 
 .login-link a {
-  color: #fdd835; /* Yellow color */
+  color: #5b63d6; /* Yellow color */
 }
+

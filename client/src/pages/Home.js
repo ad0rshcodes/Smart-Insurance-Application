@@ -8,7 +8,7 @@ function Home() {
       <div className="content">
         {/* <img src={insuranceIcon} alt="Insurance Icon" className="icon" /> */}
         <div className="text-container">
-          <h1 className="main-heading">Welcome to Smart Insurance Platform</h1>
+          <h1 className="main-heading">Welcome to RippleCare</h1>
           <p className="sub-text">
             Your one-stop solution for decentralized insurance products.
           </p>

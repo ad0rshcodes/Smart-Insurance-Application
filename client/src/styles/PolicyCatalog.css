@@ -17,7 +17,7 @@ body {
 }
 
 .policy-catalog-container {
-  padding: 40px 15px;
+  padding: 45px 15px;
 }
 
 .catalog-title {
@@ -68,13 +68,15 @@ body {
 
 .details-button {
   padding: 10px 20px;
-  background-color: var(--accent-color);
-  color: #fff;
+  background-color: var(--primary-color);
+  color: #000000;
   border-radius: var(--border-radius);
   transition: background-color 0.3s ease;
   cursor: pointer;
   text-transform: uppercase;
   font-weight: bold;
+  align-items: center;
+  text-align: center;
 }
 
 .details-button:hover {
