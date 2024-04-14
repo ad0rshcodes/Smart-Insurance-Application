@@ -12,7 +12,7 @@ function SignUp() {
             <input
               type="text"
               className="form-input"
-              placeholder="Full Name"
+              placeholder="Full Name (First Last"
               required
             />
           </div>
@@ -34,7 +34,7 @@ function SignUp() {
           </div>
           <div className="form-group">
             <input
-              type="text"
+              type="password"
               className="form-input"
               placeholder="XRP Wallet Address"
               required

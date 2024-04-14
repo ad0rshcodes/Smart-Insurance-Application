@@ -28,11 +28,17 @@
 }
 
 .form-input {
-  width: 100%;
+  width: calc(100% - 20px); /* Set a fixed width for all input boxes */
   padding: 10px;
   border: 1px solid #000;
   border-radius: 5px;
   font-family: "Helvetica Neue", sans-serif;
+  outline: none; /* Remove the default focus outline */
+}
+
+/* Remove focus outline for all input fields */
+.form-input:focus {
+  outline: none;
 }
 
 .signup-btn {

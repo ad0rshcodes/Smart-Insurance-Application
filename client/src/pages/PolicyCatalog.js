@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import samplePolicies from "./sample_policies.json";
-import PolicyDetailsModal from "./PolicyDetailsModal";
-import "../styles/PolicyCatalog.css";
+import React, { useState } from 'react';
+import samplePolicies from './sample_policies.json';
+import PolicyDetailsModal from './PolicyDetailsModal';
+import '../styles/PolicyCatalog.css';
 
 function PolicyCatalog() {
   const [selectedPolicy, setSelectedPolicy] = useState(null);
 
-  const openModal = (policy) => {
+  const openModal = policy => {
     setSelectedPolicy(policy);
   };
 
@@ -18,12 +18,8 @@ function PolicyCatalog() {
     <div className="policy-catalog-container">
       <h1 className="catalog-title">Available Insurance Policies</h1>
       <div className="policy-list">
-        {samplePolicies.map((policy) => (
-          <div
-            key={policy.id}
-            className="policy-item"
-            onClick={() => openModal(policy)}
-          >
+        {samplePolicies.map(policy => (
+          <div key={policy.id} className="policy-item" onClick={() => openModal(policy)}>
             <div className="policy-content">
               <h2 className="policy-title">{policy.name}</h2>
               <p className="policy-price">Price: ${policy.price}</p>
@@ -32,9 +28,7 @@ function PolicyCatalog() {
           </div>
         ))}
       </div>
-      {selectedPolicy && (
-        <PolicyDetailsModal policy={selectedPolicy} onClose={closeModal} />
-      )}
+      {selectedPolicy && <PolicyDetailsModal policy={selectedPolicy} onClose={closeModal} />}
     </div>
   );
 }

@@ -1,15 +1,15 @@
 :root {
-  --primary-color: #30475e; /* Dark desaturated blue */
-  --secondary-color: #f5f5f5; /* Off-white for card backgrounds */
-  --accent-color: #f2a365; /* Soft orange for interactive elements */
-  --text-color: #333333; /* Dark grey for text for better readability */
-  --background-color: #ececec; /* Light grey for overall background */
-  --border-radius: 10px; /* Rounded corners for a modern feel */
-  --hover-brighten-factor: 1.2; /* Factor to brighten the button color on hover */
+  --primary-color: #30475e;  /* Define primary color */
+  --secondary-color: #f5f5f5; /* Define secondary color */
+  --accent-color: #f2a365; /* Define accent color */
+  --text-color: #333333; /* Define text color */
+  --background-color: #ececec; /* Define background color */
+  --border-radius: 10px; /* Define border radius for elements */
+  --hover-brighten-factor: 1.2; /* Define brightness factor for hover state */
 }
 
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: var(--text-color);
   background-color: var(--background-color);
   margin: 0;
@@ -37,7 +37,6 @@ body {
 
 .policy-item {
   background-color: var(--secondary-color);
-  border: none;
   border-radius: var(--border-radius);
   padding: 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
@@ -62,16 +61,15 @@ body {
 }
 
 .policy-price {
-  margin-bottom: 1.5rem;
   font-size: 1.1rem;
   font-weight: bold;
+  margin-bottom: 1.5rem;
 }
 
 .details-button {
   padding: 10px 20px;
   background-color: var(--accent-color);
   color: #fff;
-  border: none;
   border-radius: var(--border-radius);
   transition: background-color 0.3s ease;
   cursor: pointer;
@@ -80,7 +78,5 @@ body {
 }
 
 .details-button:hover {
-  background-color: var(--accent-color);
-  /* Adjust the brightness on hover without changing to white */
   filter: brightness(var(--hover-brighten-factor));
 }
