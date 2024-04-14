@@ -107,7 +107,7 @@ const Dashboard = () => {
       {/* Navbar */}
       <div className="navbar">
         <div className="dashboard-title">Dashboard</div>
-        <div className="Peoples Protect">Your Company Name</div>
+        <div className="Peoples Protect">CryptoInsure</div>
         <div className="logout">
           <a href="/signup">Logout</a>
         </div>

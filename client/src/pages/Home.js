@@ -7,7 +7,7 @@ function Home() {
     <div className="home-container">
       <div className="content">
         <div className="text-container">
-          <h1 className="main-heading">Welcome to RippleCare</h1>
+          <h1 className="main-heading">Welcome to CryptoInsure</h1>
           <p className="sub-text">
             Your one-stop solution for decentralized insurance products.
           </p>
