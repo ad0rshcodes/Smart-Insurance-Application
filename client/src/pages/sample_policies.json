@@ -1,18 +1,22 @@
 [
   {
     "id": 1,
-    "name": "Flight Delay Assurance",
-    "description": "Get compensated for flight delays over 3 hours.",
-    "coverage": ["Flight Delay"],
+    "name": "Comprehensive Flight Assurance",
+    "description": "Offering robust protection against both delays and cancellations, this plan ensures that you receive timely compensation for any flight delay exceeding 3 hours and full reimbursement for cancellations. Designed to provide peace of mind, this policy covers additional expenses and minimizes disruptions to your travel plans, allowing you to focus on what truly matters - your journey.",
+    "coverage": ["Flight Delay", "Flight Cancellation"],
     "delayThreshold": 180,
-    "price": "25.00",
+    "cancellationReasons": ["Weather", "Technical Issues", "Airline Fault"],
+    "price": "45.00",
     "currency": "USD",
-    "payout": "200.00"
+    "payout": {
+      "Delay": "200.00",
+      "Cancellation": "Full Ticket Refund"
+    }
   },
   {
     "id": 2,
     "name": "Trip Cancellation Cover",
-    "description": "Full refund for cancellations due to medical emergencies.",
+    "description": "Gain peace of mind with a full refund for trip cancellations due to medical emergencies, prioritizing your health and financial well-being in unforeseen circumstances.",
     "coverage": ["Cancellation"],
     "cancellationReasons": ["Medical Emergency"],
     "price": "50.00",
@@ -22,7 +26,7 @@
   {
     "id": 3,
     "name": "Luggage Protection Plan",
-    "description": "Protect against lost or delayed luggage.",
+    "description": "Safeguard your travel experience from the distress of lost or delayed luggage with prompt compensation, ensuring you can replace essentials and enjoy your trip uninterrupted.",
     "coverage": ["Lost Luggage", "Delayed Luggage"],
     "luggageDelayThreshold": 240,
     "price": "30.00",
@@ -32,7 +36,7 @@
   {
     "id": 4,
     "name": "Missed Connection Insurance",
-    "description": "Compensation for missed connections due to airline fault.",
+    "description": "Receive compensation for missed connections due to airline issues, helping you manage the unexpected expenses and rearrangements necessary to continue your journey.",
     "coverage": ["Missed Connection"],
     "connectionDelayThreshold": 60,
     "price": "35.00",
@@ -42,7 +46,7 @@
   {
     "id": 5,
     "name": "Overbooking Compensation",
-    "description": "Receive payment if you're denied boarding due to overbooking.",
+    "description": "Secure a guaranteed compensation if you're denied boarding because of overbooking, affirming your rights and providing financial relief in such situations.",
     "coverage": ["Overbooking"],
     "price": "20.00",
     "currency": "USD",
@@ -51,7 +55,7 @@
   {
     "id": 6,
     "name": "Emergency Medical Cover",
-    "description": "Emergency medical expenses covered during your travel.",
+    "description": "Offers comprehensive coverage for emergency medical expenses while traveling, ensuring that unexpected health issues do not impede your safety or financial stability.",
     "coverage": ["Medical Expenses"],
     "medicalCoverageLimit": "10000.00",
     "price": "75.00",
@@ -61,7 +65,7 @@
   {
     "id": 7,
     "name": "Travel Abandonment Insurance",
-    "description": "Reimbursement if you abandon your trip after a 12-hour delay.",
+    "description": "Provides reimbursement if you need to abandon your trip following a delay of over 12 hours, safeguarding against the loss of investment in your travels and ensuring peace of mind in uncertain situations.",
     "coverage": ["Travel Abandonment"],
     "abandonmentDelayThreshold": 720,
     "price": "40.00",
@@ -71,7 +75,7 @@
   {
     "id": 8,
     "name": "Natural Disaster Evacuation Plan",
-    "description": "Covers evacuation costs due to natural disasters.",
+    "description": "Secures financial support for evacuation expenses in the event of natural disasters, ensuring you can safely relocate without the burden of additional costs during critical times.",
     "coverage": ["Evacuation"],
     "evacuationReasons": ["Natural Disaster"],
     "price": "60.00",
@@ -81,7 +85,7 @@
   {
     "id": 9,
     "name": "Tarmac Delay Coverage",
-    "description": "Compensation for extended tarmac delays.",
+    "description": "Provides compensation for passengers experiencing extended delays on the tarmac, offering financial relief and acknowledgment for the inconvenience caused by such delays.",
     "coverage": ["Tarmac Delay"],
     "tarmacDelayThreshold": 120,
     "price": "15.00",
@@ -91,7 +95,7 @@
   {
     "id": 10,
     "name": "Comprehensive Travel Insurance",
-    "description": "All-inclusive coverage for a worry-free travel experience.",
+    "description": "This all-encompassing insurance plan covers all aspects of your travel, from delays and cancellations to luggage issues and medical expenses, ensuring a truly worry-free journey from start to finish.",
     "coverage": [
       "Flight Delay",
       "Cancellation",

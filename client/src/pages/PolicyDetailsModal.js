@@ -1,5 +1,6 @@
 import React from "react";
 import "../styles/PolicyDetailsModal.css";
+import { Link } from "react-router-dom";
 
 function PolicyDetailsModal({ policy, onClose }) {
   return (
@@ -16,9 +17,9 @@ function PolicyDetailsModal({ policy, onClose }) {
           {/* You can add more policy details here */}
         </div>
         <div className="modal-footer">
-          <button className="purchase-button" onClick={onClose}>
-            Purchase
-          </button>
+          <Link to="/confirm-purchase" className="purchase-button">
+            Purchased
+          </Link>
         </div>
       </div>
     </div>

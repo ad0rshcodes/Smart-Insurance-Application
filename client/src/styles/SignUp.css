@@ -1,0 +1,63 @@
+/* SignUp.css */
+
+.signup-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.content {
+  width: 300px;
+}
+
+.signup-title {
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: bold;
+  font-size: 2rem;
+  color: #000;
+  margin-bottom: 20px;
+}
+
+.signup-form {
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  font-family: "Helvetica Neue", sans-serif;
+}
+
+.signup-btn {
+  width: 100%;
+  padding: 10px;
+  background-color: #fdd835; /* Yellow color */
+  color: #000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: "Helvetica Neue", sans-serif;
+  font-weight: bold;
+}
+
+.signup-btn:hover {
+  background-color: #000; /* Black color */
+  color: #fdd835; /* Yellow color */
+}
+
+.login-link {
+  font-family: "Helvetica Neue", sans-serif;
+  color: #000;
+  font-size: 0.9rem;
+}
+
+.login-link a {
+  color: #fdd835; /* Yellow color */
+}

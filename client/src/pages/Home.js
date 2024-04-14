@@ -5,10 +5,19 @@ import "../styles/Home.css";
 function Home() {
   return (
     <div className="home-container">
-      <h1>Welcome to Smart Insurance Platform</h1>
-      <p>Your one-stop solution for decentralized insurance products.</p>
-      <div className="navigation-links">
-        <Link to="/catalog">Sign Up</Link>
+      <div className="content">
+        {/* <img src={insuranceIcon} alt="Insurance Icon" className="icon" /> */}
+        <div className="text-container">
+          <h1 className="main-heading">Welcome to Smart Insurance Platform</h1>
+          <p className="sub-text">
+            Your one-stop solution for decentralized insurance products.
+          </p>
+        </div>
+        <div className="navigation-links">
+          <Link to="/signup" className="btn btn-primary">
+            Get Started
+          </Link>
+        </div>
       </div>
     </div>
   );

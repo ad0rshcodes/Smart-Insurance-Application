@@ -1,33 +1,65 @@
-// import {
-//   withAuthInfo,
-//   useRedirectFunctions,
-//   useLogoutFunction,
-// } from "@propelauth/react";
+import React from "react";
+import { Link } from "react-router-dom";
+import "../styles/SignUp.css";
 
-// const Signup = withAuthInfo((props) => {
-//   const logoutFunction = useLogoutFunction();
-//   const { redirectToLoginPage, redirectToSignupPage, redirectToAccountPage } =
-//     useRedirectFunctions();
-//   // Or if you want to make links instead
-//   // const { getLoginPageUrl, getSignupPageUrl, getAccountPageUrl } = useHostedPageUrls()
+function SignUp() {
+  return (
+    <div className="signup-container">
+      <div className="content">
+        <h1 className="signup-title">Sign Up</h1>
+        <form className="signup-form">
+          <div className="form-group">
+            <input
+              type="text"
+              className="form-input"
+              placeholder="Full Name"
+              required
+            />
+          </div>
+          <div className="form-group">
+            <input
+              type="email"
+              className="form-input"
+              placeholder="Email Address"
+              required
+            />
+          </div>
+          <div className="form-group">
+            <input
+              type="password"
+              className="form-input"
+              placeholder="Password"
+              required
+            />
+          </div>
+          <div className="form-group">
+            <input
+              type="text"
+              className="form-input"
+              placeholder="XRP Wallet Address"
+              required
+            />
+          </div>
+          <div className="form-group">
+            <input
+              type="password"
+              className="form-input"
+              placeholder="XRP Wallet Secret Key"
+              required
+            />
+          </div>
+          <Link to="/flighttrack">
+            <button className="signup-btn" type="submit">
+              Sign Up
+            </button>
+          </Link>
+        </form>
+        <p className="login-link">
+          Already have an account? <Link to="/login">Log in</Link>
+        </p>
+      </div>
+    </div>
+  );
+}
 
-//   if (props.isLoggedIn) {
-//     return (
-//       <div>
-//         <p>You are logged in as {props.user.email}</p>
-//         <button onClick={() => redirectToAccountPage()}>Account</button>
-//         <button onClick={() => logoutFunction(true)}>Logout</button>
-//       </div>
-//     );
-//   } else {
-//     return (
-//       <div>
-//         <p>You are not logged in</p>
-//         <button onClick={() => redirectToLoginPage()}>Login</button>
-//         <button onClick={() => redirectToSignupPage()}>Signup</button>
-//       </div>
-//     );
-//   }
-// });
-
-// export default Signup;
+export default SignUp;
