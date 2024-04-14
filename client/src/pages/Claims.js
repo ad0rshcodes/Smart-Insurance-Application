@@ -1,63 +1,68 @@
-import React, { useState } from "react";
-import axios from "axios";
+import io from 'socket.io-client';
+import { xrpl } from 'xrpl';  // Assuming you're using an NPM package for XRPL
 
-function Claims() {
-  const [confirmationNumber, setConfirmationNumber] = useState("");
-  const [flightDetails, setFlightDetails] = useState(null);
-  const [error, setError] = useState("");
+// Socket connection for server communication
+const socket = io('http://127.0.0.1:5000');
 
-  const handleInputChange = (event) => {
-    setConfirmationNumber(event.target.value);
-  };
-
-  const checkClaim = async () => {
-    try {
-      const response = await axios.post(
-        "http://localhost:5000/api/check-claim",
-        {
-          confirmation_number: confirmationNumber,
-        }
-      );
-      setFlightDetails(response.data);
-      setError("");
-      console.log("API call successful: ", response.data);
-    } catch (err) {
-      console.error("API call failed: ", err);
-      if (err.response) {
-        setError(
-          err.response.data.error ||
-            "An error occurred while fetching the claim details."
-        );
-      } else if (err.request) {
-        setError("No response from server, check your network connection.");
-      } else {
-        setError("Error: " + err.message);
-      }
-      setFlightDetails(null);
+// Function to submit the insurance policy purchase and initiate payment
+async function submitPurchase(policyId) {
+    const policyDetails = getPolicyDetails(policyId);
+    if (!policyDetails) {
+        console.error('Policy details not found.');
+        return;
     }
-  };
 
-  return (
-    <div>
-      <h1>Check Your Flight Claim</h1>
-      <input
-        type="text"
-        value={confirmationNumber}
-        onChange={handleInputChange}
-        placeholder="Enter Confirmation Number"
-      />
-      <button onClick={checkClaim}>Check Claim</button>
-      {error && <p className="error">{error}</p>}
-      {flightDetails && (
-        <div>
-          <h2>Flight Details:</h2>
-          <p>Status: {flightDetails.flightDetails.status}</p>
-          <p>Reimbursement Status: {flightDetails.reimbursementStatus}</p>
-          {/* Render more details as needed */}
-        </div>
-      )}
-    </div>
-  );
+    try {
+        // Simulate fetching user's wallet details linked previously
+        const userWallet = getUserWalletDetails(); 
+        const xrplClient = new xrpl.Client("wss://s1.ripple.com"); // Connect to XRPL public server
+        await xrplClient.connect();
+
+        // Prepare the transaction
+        const preparedTx = await xrplClient.autofill({
+            "TransactionType": "Payment",
+            "Account": userWallet.address,
+            "Amount": xrpl.xrpToDrops(policyDetails.price),  // Convert XRP to drops
+            "Destination": policyDetails.payeeAddress
+        });
+
+        // Sign the transaction
+        const signedTx = xrplClient.sign(preparedTx, userWallet.secret);
+
+        // Submit the transaction
+        const txResult = await xrplClient.submitAndWait(signedTx.tx_blob);
+        console.log(txResult);
+
+        // Emit confirmation result to the server
+        socket.emit('purchase_confirmation', {
+            policyId: policyId,
+            transactionId: txResult.transaction.hash,
+            status: txResult.result.meta.TransactionResult
+        });
+
+        if (txResult.result.meta.TransactionResult === 'tesSUCCESS') {
+            alert('Payment successful and policy confirmed!');
+        } else {
+            throw new Error('Transaction failed with status: ' + txResult.result.meta.TransactionResult);
+        }
+    } catch (error) {
+        console.error('Error during XRPL transaction:', error);
+        alert('Failed to process payment: ' + error.message);
+    }
 }
 
-export default Claims;
+// Helper functions
+function getPolicyDetails(policyId) {
+    // This would typically fetch policy details from the backend or a local store
+    return sample_policies.find(p => p.id === policyId);
+}
+
+function getUserWalletDetails() {
+    // Fetch and return user's linked wallet details
+    return { address: 'rEXAMPLEADDRESS', secret: 'sEXAMPLESECRET' };
+}
+
+document.getElementById('confirmPurchaseBtn').addEventListener('click', function() {
+    const policyId = document.getElementById('policyIdInput').value;
+    submitPurchase(policyId);
+});
